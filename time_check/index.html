@@ -1,0 +1,116 @@
+<!doctype html>
+
+<html>
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="lib/text.js"></script>
+    <script src="lib/sha256.js"></script>
+    <script src="lib/streebog.js"></script>
+    <script src="lib/timeTest.js"></script>
+  </head>
+
+  <body>
+    <h1 class="fs-2, text-center">Time test results</h1>
+    <ul>
+    <hr align="center" width="60%" size="1" color="#ff0000" />
+    <li><p class="fs-5">Empty string:</p></li>
+    </ul>
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Sha256
+        <span class="badge bg-primary rounded-pill" id="0">0</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Streebog 256
+        <span class="badge bg-primary rounded-pill" id="1">0</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Streebog 512
+        <span class="badge bg-primary rounded-pill" id="2">0</span>
+      </li>
+    </ul>
+    <script>checkTime("", "0", "1", "2")</script>
+
+    <hr align="center" width="60%" size="1" color="#ff0000" />
+    <ul>
+    <li><p class="fs-5">Abc:</p></li>
+    </ul>
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Sha256
+        <span class="badge bg-primary rounded-pill" id="3">0</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Streebog 256
+        <span class="badge bg-primary rounded-pill" id="4">0</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Streebog 512
+        <span class="badge bg-primary rounded-pill" id="5">0</span>
+      </li>
+    </ul>
+    <script>checkTime("abc", "3", "4", "5")</script>
+    
+    <hr align="center" width="60%" size="1" color="#ff0000" />
+    <ul>
+    <li><p class="fs-5">The quick brown fox jumps over the lazy dog:</p></li>
+    </ul>
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Sha256
+        <span class="badge bg-primary rounded-pill" id="6">0</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Streebog 256
+        <span class="badge bg-primary rounded-pill" id="7">0</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Streebog 512
+        <span class="badge bg-primary rounded-pill" id="8">0</span>
+      </li>
+    </ul>
+    <script>checkTime("The quick brown fox jumps over the lazy dog", "6", "7", "8")</script>
+    
+    <hr align="center" width="60%" size="1" color="#ff0000" />
+    <ul>
+    <li><p class="fs-5">Long string (length > 512):</p></li>
+    </ul>
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Sha256
+        <span class="badge bg-primary rounded-pill" id="9">0</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Streebog 256
+        <span class="badge bg-primary rounded-pill" id="10">0</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Streebog 512
+        <span class="badge bg-primary rounded-pill" id="11">0</span>
+      </li>
+    </ul>
+    <script>checkTime(smallText, "9", "10", "11")</script>
+    
+    <hr align="center" width="60%" size="1" color="#ff0000" />
+    <ul>
+    <li><p class="fs-5">Very long string (text from text.js):</p></li>
+    </ul>
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Sha256
+        <span class="badge bg-primary rounded-pill" id="12">0</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Streebog 256
+        <span class="badge bg-primary rounded-pill" id="13">0</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Streebog 512
+        <span class="badge bg-primary rounded-pill" id="14">0</span>
+      </li>
+    </ul>
+    <script>checkTime(text, "12", "13", "14")</script>
+
+  </body>
+</html>
