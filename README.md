@@ -7,3 +7,7 @@ https://plnkr.co/plunk/DlvcgqjtZcOjwcdl
 https://plnkr.co/plunk/o8OgdRIENvawdSNf
 ### document with description
 https://docs.google.com/document/d/1S_rllTwkHe5gJjaWTCU8tj3TOkMPjNPnqdmZvrhBWDc/edit?usp=sharing
+### Sha256
+/hash_page/lib/sha256.js
+### Streebog
+/hash_page/lib/streebig.js
